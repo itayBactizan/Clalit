@@ -1,56 +1,21 @@
-Project Structure
-bash
-Copy
-Edit
-.
-├── app/
-│   └── disease_detection.ipynb     # Your notebook
-├── requirements.txt                # Python dependencies
-├── Dockerfile                      # Docker setup
-└── README.md                       # Project documentation
-🚀 Features
-Preprocessed CSV data input
+# Disease Detection Project
 
-Machine learning model training & prediction
+This project analyzes health-related data to classify disease types using Python and PySpark for data preparation, and scikit-learn/XGBoost and DecisionTree for modeling and SHAP interpretability.
 
-JupyterLab interface via Docker
+## 🚀 Getting Started
 
-Easy setup and reproducibility
+### 1. Build the Docker Image
 
-🧰 Technologies Used
-Python 3.12
-
-Scikit-learn / Pandas / NumPy / Matplotlib (or whatever you used)
-
-JupyterLab
-
-Docker
-
-🐳 Running with Docker
-Build the Docker image:
-
-bash
-Copy
-Edit
 docker build -t disease-detection .
-Run the container:
 
-🪟 Windows (PowerShell):
-bash
-Copy
-Edit
-docker run --rm -p 8888:8888 -v ${PWD}/app:/app disease-detection
-🐧 Linux / macOS:
-bash
-Copy
-Edit
-docker run --rm -p 8888:8888 -v $(pwd)/app:/app disease-detection
-Open your browser and go to:
+### 2. Run the Docker Container
+docker run --rm -p 8888:8888 -v "%cd%\app:/app" -w /app disease-detection
 
-arduino
-Copy
-Edit
-http://127.0.0.1:8888/tree
+### 3. Open Jupyter Notebook
+In your browser, go to: http://127.0.0.1:8888/tree
 
-🧑‍💻 Author
-Itay Bactizan
+### 4. Start Working
+Open the notebook: DiseaseDetection.ipynb
+
+The dataset is available as: Prediction home assignment data.csv
+

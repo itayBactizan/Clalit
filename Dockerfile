@@ -1,5 +1,19 @@
 FROM python:3.12.9-slim
 
+# Install system packages including default-jdk (Java) and procps (for ps command)
+RUN apt-get update && apt-get install -y \
+    default-jdk \
+    procps \
+    curl \
+    wget \
+    gnupg \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set JAVA_HOME (based on default-jdk location, adjust if needed)
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH=$JAVA_HOME/bin:$PATH
+
 # Set working directory
 WORKDIR /app
 
